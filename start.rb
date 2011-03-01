@@ -25,3 +25,10 @@ put '/comment' do
   })
   redirect '/'
 end
+
+get '/delete' do
+  p params
+  Comments.filter(:id => params[:id]).delete
+  redirect '/'
+end
+
